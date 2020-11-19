@@ -6,6 +6,8 @@ bot.start((ctx) =>{
     ctx.reply("Bienvenido");
 })
 
+bot.launch()
+
 exports.handler = async function(event, context) {
     return {
         statusCode: 200,

@@ -9,10 +9,10 @@ bot.start(ctx =>{
 bot.help(ctx =>{
     ctx.reply("Ayudaaaaaaaaaaaa");
 })
-
+bot.launch()
 
 exports.handler = async function(event, context) {
-    bot.launch();
+    bot.launch()
     return {
         statusCode: 200,
         body: JSON.stringify({message: ""})

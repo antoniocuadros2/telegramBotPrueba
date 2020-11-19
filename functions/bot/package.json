@@ -1,16 +1,24 @@
 {
-  "name": "bot",
+  "name": "telegramBotPrueba",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniocuadros2/telegramBotPrueba.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoniocuadros2/telegramBotPrueba/issues"
+  },
+  "homepage": "https://github.com/antoniocuadros2/telegramBotPrueba#readme",
   "dependencies": {
-    "faunadb": "^2.13.0",
-    "telegraf": "^3.36.0"
+    "netlify-lambda": "^2.0.1",
+    "telegraf": "^3.38.0"
   }
 }

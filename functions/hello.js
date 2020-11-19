@@ -1,11 +1,9 @@
 const Telegraf = require('telegraf');
-const startAction = require("./acciones/start")
-
 
 const bot = new Telegraf('1431457336:AAFnn9sLjmCN40l37SUx6iAbn5HQd7zMsh8');
 
 bot.start(ctx =>{
-    ctx.startAction(ctx);
+    ctx.reply("Holaaaaaaaaaaa");
 })
 
 bot.help(ctx =>{

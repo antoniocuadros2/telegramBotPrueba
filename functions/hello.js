@@ -1,8 +1,8 @@
 const Telegraf = require('telegraf');
 
-const bot = new Telegraf(process.env.TELEGRAMBOTTOKEN);
+const bot = new Telegraf('1431457336:AAFnn9sLjmCN40l37SUx6iAbn5HQd7zMsh8');
 
-bot.start((ctx) =>{
+bot.start(ctx =>{
     ctx.reply("Bienvenido");
 })
 

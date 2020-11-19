@@ -9,7 +9,7 @@ bot.start((ctx) =>{
 
 
 exports.handler = async function(event, context) {
-    await bot.handleUpdate(JSON.parse(event.body));
+    bot.launch();
     return {
         statusCode: 200,
         body: JSON.stringify({message: "Hello World"})

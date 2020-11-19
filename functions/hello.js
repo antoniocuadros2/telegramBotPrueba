@@ -3,11 +3,11 @@ const Telegraf = require('telegraf');
 const bot = new Telegraf(process.env.TELEGRAMBOTTOKEN);
 
 bot.start(ctx =>{
-    ctx.reply("Bienvenido");
+    ctx.reply({info:"Bienvenido"});
 })
 
 bot.help(ctx =>{
-    ctx.reply("Ayudaaaaaaaaaaaa");
+    ctx.reply({info:"Ayudaaaaaaaaaaaa"});
 })
 bot.launch()
 

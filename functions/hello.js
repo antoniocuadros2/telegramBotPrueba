@@ -6,9 +6,10 @@ bot.start((ctx) =>{
     ctx.reply("Bienvenido");
 })
 
-bot.launch()
+
 
 exports.handler = async function(event, context) {
+    bot.launch()
     return {
         statusCode: 200,
         body: JSON.stringify({message: "Hello World"})

@@ -12,9 +12,9 @@ bot.help(ctx =>{
 bot.launch()
 
 exports.handler = async function(event, context) {
-    bot.launch()
+    await bot.handleUpdate(JSON.parse(event.body));
     return {
         statusCode: 200,
-        body: JSON.stringify({message: ""})
+        body:''
     };
 }

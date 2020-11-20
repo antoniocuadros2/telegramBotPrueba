@@ -10,8 +10,6 @@ bot.help(ctx =>{
     ctx.reply("Ayudaaaaaaaaaaaa");
 })
 
-bot.launch()
-
 exports.handler = async function(event, context) {
     try{
         await bot.handleUpdate(JSON.parse(event.body));

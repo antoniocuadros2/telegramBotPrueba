@@ -1,19 +1,24 @@
 {
-    "name": "pruebasbot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "functions/tocamos.js",
-    "dependencies": {
-      "netlify-lambda": "^1.6.0",
-      "telegraf": "^3.34.1"
-    },
-    "scripts": {
-      "postinstall": "netlify-lambda install",
-      "buildNetlify": "netlify-lambda build functions",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "devNetlify": "netlify-lambda serve functions"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+  "name": "telegramBotPrueba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniocuadros2/telegramBotPrueba.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoniocuadros2/telegramBotPrueba/issues"
+  },
+  "homepage": "https://github.com/antoniocuadros2/telegramBotPrueba#readme",
+  "dependencies": {
+    "netlify-lambda": "^2.0.1",
+    "telegraf": "^3.38.0"
   }
+}

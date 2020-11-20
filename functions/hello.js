@@ -29,7 +29,7 @@ exports.handler = async function(event, context) {
                 a_devolver = "Que tareas tengo que hacer urgentemente";
                 break;
             default:
-                a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y  /ktengourgente para obtener una lista ordenada de tareas por urgencia a realizar"
+                a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y  /ktengourgente para obtener una lista ordenada por urgencia de tareas a realizar"
                 break;
         }       
         await enviaMensaje(chat.id, a_devolver);

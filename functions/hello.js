@@ -11,9 +11,6 @@ bot.help(ctx =>{
 })
 
 exports.handler = async function(event, context) {
-	const body = JSON.parse(event.body);
-	return { statusCode: 200, body: event.body.message.text};
-	/*
     try{
         await bot.handleUpdate(JSON.parse(event.body));
         return { statusCode: 200, body: ''};
@@ -21,6 +18,5 @@ exports.handler = async function(event, context) {
         console.log(e)
         return { statusCode: 400, body: 'Está siendo utilizado por un bot de telegram: @asignaturasivbot'};
     }
-    */
 }
 

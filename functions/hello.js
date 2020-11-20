@@ -32,13 +32,7 @@ exports.handler = async function(event, context) {
                 a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y  / "
                 break;
         }       
-        request({
-            method: 'GET',
-            uri: `https://api.telegram.org/bot${process.env.TELEGRAMBOTTOKEN}/sendMessage`,
-            qs: {
-              chat_id,  //id del chat
-              text      //contenido
-        })
+        enviaMensaje(chat.id, a_devolver);
     }
     else{ //no contiene texto el mensaje
         enviaMensaje(chat.id, 'Text message is expected.');

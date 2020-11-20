@@ -9,6 +9,7 @@ bot.start(ctx =>{
 bot.help(ctx =>{
     ctx.reply("Ayudaaaaaaaaaaaa");
 })
+
 bot.launch()
 
 exports.handler = async function(event, context) {
@@ -17,6 +18,6 @@ exports.handler = async function(event, context) {
         return { statusCode: 200, body: ''};
     } catch(e){
         console.log(e)
-        return { statusCode: 400, body: 'Error'};
+        return { statusCode: 400, body: 'Está siendo utilizado por un bot de telegram: @asignaturasivbot'};
     }
 }

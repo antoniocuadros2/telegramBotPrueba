@@ -1,22 +1,69 @@
-const Telegraf = require('telegraf');
+const rp = require('request-promise');
+const TELEGRAM_TOKEN = '        ';
+async function getShortUrl(longUrl) {
+  const options = {
+    method: 'POST',
+    uri: 'https://cleanuri.com/api/v1/shorten',
+    form: {
+      url: String(longUrl).trim()
+    },
+    json: true
+  };
 
-const bot = new Telegraf(process.env.TELEGRAMBOTTOKEN);
-
-bot.start(ctx =>{
-    ctx.reply("Bienvenido, soy @asignaturasivbot, ¿en qué puedo ayudarte?, puedo hacer todo lo que está en /help");
-})
-
-bot.help(ctx =>{
-    ctx.reply("Ayudaaaaaaaaaaaa");
-})
-
-exports.handler = async function(event, context) {
-    try{
-        await bot.handleUpdate(JSON.parse(event.body));
-        return { statusCode: 200, body: ''};
-    } catch(e){
-        console.log(e)
-        return { statusCode: 400, body: 'Está siendo utilizado por un bot de telegram: @asignaturasivbot'};
-    }
+  return rp(options);
 }
 
+async function sendToUser(chat_id, text) {
+  const options = {
+    method: 'GET',
+    uri: `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+    qs: {
+      chat_id,
+      text
+    }
+  };
+
+  return rp(options);
+}
+
+module.exports.shortbot = async event => {
+  const body = JSON.parse(event.body);
+  const {chat, text} = body.message;
+
+  if (text) {
+    let message = '';
+    try {
+      const result = await getShortUrl(text);
+      message = `Input: ${text}, \nShort: ${result.result_url}`;
+    } catch (error) {
+      message = `Input: ${text}, \nError: ${error.message}`;
+    }
+
+    await sendToUser(chat.id, message);
+  } else {
+    await sendToUser(chat.id, 'Text message is expected.');
+  }
+
+  return { statusCode: 200 };
+};
+
+exports.handler = async function(event, context) {
+    const body = JSON.parse(event.body);
+    const {chat, text} = body.message;
+  
+    if (text) {
+      let message = '';
+      try {
+        const result = await getShortUrl(text);
+        message = `Input: ${text}, \nShort: ${result.result_url}`;
+      } catch (error) {
+        message = `Input: ${text}, \nError: ${error.message}`;
+      }
+  
+      await sendToUser(chat.id, message);
+    } else {
+      await sendToUser(chat.id, 'Text message is expected.');
+    }
+  
+    return { statusCode: 200 };
+}

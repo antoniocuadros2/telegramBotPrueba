@@ -3,7 +3,7 @@ const Telegraf = require('telegraf');
 const bot = new Telegraf(process.env.TELEGRAMBOTTOKEN);
 
 bot.start(ctx =>{
-    ctx.reply("Bienvenido, soy @asignaturasbotiv, ¿en qué puedo ayudarte?, puedo hacer todo lo que está en /help");
+    ctx.reply("Bienvenido, soy @asignaturasivbot, ¿en qué puedo ayudarte?, puedo hacer todo lo que está en /help");
 })
 
 bot.help(ctx =>{

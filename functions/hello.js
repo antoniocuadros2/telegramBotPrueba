@@ -22,7 +22,7 @@ exports.handler = async function(event, context) {
     if (text){ //Contiene texto el mensaje
         let message = '';
 
-        enviaMensaje(chat.id, "YA FUNCIONOOOO, ESTOY VIVOOOOOOOOOOOO");
+        enviaMensaje(chat.id, text);
     }
     else{ //no contiene texto el mensaje
         enviaMensaje(chat.id, 'Text message is expected.');

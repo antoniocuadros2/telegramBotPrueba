@@ -19,12 +19,13 @@ exports.handler = async function(event, context) {
     let body = JSON.parse(event.body);
     let {chat, text} = body.message;
   
-    if (text) { //Contiene texto el mensaje
-      let message = '';
+    if (text){ //Contiene texto el mensaje
+        let message = '';
 
-      await enviaMensaje(chat.id, "YA FUNCIONOOOO, ESTOY VIVOOOOOOOOOOOO");
-    } else { //no contiene texto el mensaje
-      await enviaMensaje(chat.id, 'Text message is expected.');
+        enviaMensaje(chat.id, "YA FUNCIONOOOO, ESTOY VIVOOOOOOOOOOOO");
+    }
+    else{ //no contiene texto el mensaje
+        enviaMensaje(chat.id, 'Text message is expected.');
     }
   
     return { statusCode: 200 };

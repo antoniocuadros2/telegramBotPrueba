@@ -4,7 +4,7 @@ async function sendToUser(chat_id, text) {
   const options = {
     method: 'GET',
     uri: `https://api.telegram.org/bot${process.env.TELEGRAMBOTTOKEN}/sendMessage`,
-    qs: {
+    body: {
       chat_id,
       text
     }

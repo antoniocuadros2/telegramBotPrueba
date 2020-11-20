@@ -1,4 +1,4 @@
-const reqp = require('request');
+const request = require('request');
 
 async function enviaMensaje(chat_id, text) {
   const options = {
@@ -10,7 +10,7 @@ async function enviaMensaje(chat_id, text) {
     }
   };
 
-  return reqp(options);
+  return request(options);
 }
 
 

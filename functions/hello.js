@@ -48,6 +48,8 @@ module.exports.shortbot = async event => {
   return { statusCode: 200 };
 };
 
+
+//HANDLER
 exports.handler = async function(event, context) {
     const body = JSON.parse(event.body);
     const {chat, text} = body.message;
@@ -58,7 +60,7 @@ exports.handler = async function(event, context) {
         const result = await getShortUrl(text);
         message = `Input: ${text}, \nShort: ${result.result_url}`;
       } catch (error) {
-        message = `Input: ${text}, \nError: ${error.message}`;
+        message = `holaCaraCola`;
       }
   
       await sendToUser(chat.id, message);

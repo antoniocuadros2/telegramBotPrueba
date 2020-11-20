@@ -1,4 +1,4 @@
-const reqp = require('request-promise');
+const reqp = require('request');
 
 async function enviaMensaje(chat_id, text) {
   const options = {

@@ -1,17 +1,16 @@
-const rp = require('request-promise');
-const TELEGRAM_TOKEN = process.env.TELEGRAMBOTTOKEN;
+const reqp = require('request-promise');
 
 async function sendToUser(chat_id, text) {
   const options = {
     method: 'GET',
     uri: `https://api.telegram.org/bot${process.env.TELEGRAMBOTTOKEN}/sendMessage`,
-    qs: {
+    tg_options: {
       chat_id,
       text
     }
   };
 
-  return rp(options);
+  return reqp(options);
 }
 
 

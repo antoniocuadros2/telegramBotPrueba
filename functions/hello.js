@@ -1,19 +1,6 @@
 const rp = require('request-promise');
 const TELEGRAM_TOKEN = process.env.TELEGRAMBOTTOKEN;
 
-async function getShortUrl(longUrl) {
-  const options = {
-    method: 'POST',
-    uri: 'https://cleanuri.com/api/v1/shorten',
-    form: {
-      url: String(longUrl).trim()
-    },
-    json: true
-  };
-
-  return rp(options);
-}
-
 async function sendToUser(chat_id, text) {
   const options = {
     method: 'GET',
@@ -35,14 +22,8 @@ exports.handler = async function(event, context) {
   
     if (text) { //Contiene texto el mensaje
       let message = '';
-      try {
-        const result = await getShortUrl(text);
-        message = `Input: ${text}, \nShort: ${result.result_url}`;
-      } catch (error) {
-        message = `holaCaraCola`;
-      }
-  
-      await sendToUser(chat.id, message);
+
+      await sendToUser(chat.id, "YA FUNCIONOOOO, ESTOY VIVOOOOOOOOOOOO");
     } else { //no contiene texto el mensaje
       await sendToUser(chat.id, 'Text message is expected.');
     }

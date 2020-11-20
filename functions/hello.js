@@ -19,3 +19,4 @@ exports.handler = async function(event, context) {
         return { statusCode: 400, body: 'Está siendo utilizado por un bot de telegram: @asignaturasivbot'};
     }
 }
+

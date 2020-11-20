@@ -32,10 +32,10 @@ exports.handler = async function(event, context) {
                 a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y  /ktengourgente para obtener una lista ordenada de tareas por urgencia a realizar"
                 break;
         }       
-        enviaMensaje(chat.id, a_devolver);
+        await enviaMensaje(chat.id, a_devolver);
     }
     else{ //no contiene texto el mensaje
-        enviaMensaje(chat.id, 'Text message is expected.');
+        await enviaMensaje(chat.id, 'Text message is expected.');
     }
   
     return { statusCode: 200 };

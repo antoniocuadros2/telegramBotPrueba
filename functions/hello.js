@@ -5,8 +5,8 @@ async function enviaMensaje(chat_id, text) {
     method: 'GET',
     uri: `https://api.telegram.org/bot${process.env.TELEGRAMBOTTOKEN}/sendMessage`,
     qs: {
-      chat_id,
-      text
+      chat_id,  //id del chat
+      text      //contenido
     }
   };
 
@@ -16,8 +16,8 @@ async function enviaMensaje(chat_id, text) {
 
 //HANDLER
 exports.handler = async function(event, context) {
-    const body = JSON.parse(event.body);
-    const {chat, text} = body.message;
+    let body = JSON.parse(event.body);
+    let {chat, text} = body.message;
   
     if (text) { //Contiene texto el mensaje
       let message = '';

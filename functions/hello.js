@@ -1,6 +1,6 @@
 const reqp = require('request-promise');
 
-async function sendToUser(chat_id, text) {
+async function enviaMensaje(chat_id, text) {
   const options = {
     method: 'GET',
     uri: `https://api.telegram.org/bot${process.env.TELEGRAMBOTTOKEN}/sendMessage`,
@@ -22,9 +22,9 @@ exports.handler = async function(event, context) {
     if (text) { //Contiene texto el mensaje
       let message = '';
 
-      await sendToUser(chat.id, "YA FUNCIONOOOO, ESTOY VIVOOOOOOOOOOOO");
+      await enviaMensaje(chat.id, "YA FUNCIONOOOO, ESTOY VIVOOOOOOOOOOOO");
     } else { //no contiene texto el mensaje
-      await sendToUser(chat.id, 'Text message is expected.');
+      await enviaMensaje(chat.id, 'Text message is expected.');
     }
   
     return { statusCode: 200 };

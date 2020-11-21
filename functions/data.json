@@ -27,7 +27,7 @@
             "enlace":["https://meet.google.com/tvm-umgh-tfm?pli=1&authuser=3"],
             "dia":["Miércoles", "Miércoles", ["Viernes"]],
             "horas":["11:30-13:30", "9:30-11:30", "9:30-11:30"],
-            "tareas": ["Defensa-P3", "Entrega-tareas", "Presentación-trabajo-final"],
+            "tareas": ["Defensa-P3", "Entrega-tareas", "Presentación-final"],
             "fecha_tareas":["27/11", "30/11", "4/11"]
         }
     }

@@ -27,9 +27,9 @@ function getAsignaturas(){
       }
     }
     else{
-      tareas += "Tarea: " + data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
+      tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
     }
-    a_devolver += "**" + data['asignaturas'][i]["nombreAsignatura"]  + "**" + "-> " +  tareas  + "\n";
+    a_devolver += data['asignaturas'][i]["nombreAsignatura"]  + "-> " +  tareas  + "\n";
   }
   return a_devolver;
 }

@@ -24,11 +24,11 @@ function getAsignaturas(asignatura = "todas"){
     if(asignatura == "todas"){
       if (data['asignaturas'][i]["tareas"].length > 1){
         for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
-          tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
+          tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
         }
       }
       else{
-        tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
+        tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"];
       }
       a_devolver += data['asignaturas'][i]["nombreAsignatura"]  + "-> " +  tareas  + "\n";
     }
@@ -36,11 +36,11 @@ function getAsignaturas(asignatura = "todas"){
       if (data['asignaturas'][i]["nombreAsignatura"] == asignatura){
         if (data['asignaturas'][i]["tareas"].length > 1){
           for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
-            tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
+            tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
           }
         }
         else{
-          tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
+          tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"];
         }
         a_devolver += data['asignaturas'][i]["nombreAsignatura"]  + "-> " +  tareas  + "\n";
       }

@@ -2,7 +2,7 @@
 {
     "asignaturas":{
         "1":{
-            "nombreAsignatura":"Infraestructura virtual",
+            "nombreAsignatura":"IV",
             "modalidad":"teoría, prácticas, prácticas",
             "enlace":"https://meet.jit.si/IV-ETSIIT-UGR-2020",
             "dia":["Martes", "Martes, Viernes"],
@@ -12,7 +12,7 @@
         },
         
         "2":{
-            "nombreAsignatura":"Desarrollo de Aplicaciones para internet",
+            "nombreAsignatura":"DAI",
             "modalidad":["teoría", "prácticas", "prácticas"],
             "enlace":["https://meet.google.com/fah-hfak-npa","https://meet.google.com/ohk-meko-qym", "https://meet.google.com/gfv-wgxk-gfe", "https://meet.google.com/rtu-wxcv-paq"],
             "dia":["Viernes", "Martes", "Miércoles", "Viernes"],
@@ -22,7 +22,7 @@
         },
  
         "3":{
-            "nombreAsignatura":"Seguridad y Protección de sistemas informáticos",
+            "nombreAsignatura":"SPSI",
             "modalidad":["teoría", "prácticas", "prácticas"],
             "enlace":["https://meet.google.com/tvm-umgh-tfm?pli=1&authuser=3"],
             "dia":["Miércoles", "Miércoles", ["Viernes"]],

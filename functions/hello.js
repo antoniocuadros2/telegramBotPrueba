@@ -17,11 +17,20 @@ async function enviaMensaje(chat_id, text) {
 function getAsignaturas(){
   num_asignaturas = 3;
   a_devolver = "";
+  
   for(i = 1; i <= num_asignaturas; i++){
-    
-    a_devolver += data['asignaturas'][i]["nombreAsignatura"] + "-> " +  data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"] + "\n";
+    tareas = "";
+    fechas = ""
+    if (data['asignaturas'][i]["tareas"].length > 1){
+      for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
+        tareas += data['asignaturas'][i]["tareas"][j] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
+      }
+    }
+    else{
+      tareas += data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
+    }
+    a_devolver += "<bold>" + data['asignaturas'][i]["nombreAsignatura"]  + "<bold>" + "-> " +  tareas  + "\n";
   }
-  return a_devolver;
 }
 
 //HANDLER
@@ -52,21 +61,4 @@ exports.handler = async function(event, context) {
 }
 
 
-num_asignaturas = 3;
-a_devolver = "";
 
-for(i = 1; i <= num_asignaturas; i++){
-  tareas = "";
-  fechas = ""
-  if (data['asignaturas'][i]["tareas"].length > 1){
-    for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
-      tareas += data['asignaturas'][i]["tareas"][j] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
-    }
-  }
-  else{
-    tareas += data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
-  }
-  a_devolver += "<bold>" + data['asignaturas'][i]["nombreAsignatura"]  + "<bold>" + "-> " +  tareas  + "\n";
-}
-
-console.log(a_devolver)

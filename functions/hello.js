@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const data = require('./data.json');
+const lib = require('./tareas')
 
 async function enviaMensaje(chat_id, text) {
   const options = {
@@ -14,41 +14,6 @@ async function enviaMensaje(chat_id, text) {
   return request(options);
 }
 
-function getAsignaturas(asignatura = "todas"){
-  num_asignaturas = 3;
-  a_devolver = "";
-  
-  for(i = 1; i <= num_asignaturas; i++){
-    tareas = "";
-    fechas = ""
-    if(asignatura == "todas"){
-      if (data['asignaturas'][i]["tareas"].length > 1){
-        for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
-          tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
-        }
-      }
-      else{
-        tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"];
-      }
-      a_devolver += data['asignaturas'][i]["nombreAsignatura"]  + "-> " +  tareas  + "\n";
-    }
-    else{
-      if (data['asignaturas'][i]["nombreAsignatura"] == asignatura){
-        if (data['asignaturas'][i]["tareas"].length > 1){
-          for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
-            tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
-          }
-        }
-        else{
-          tareas +=   "   \n     Tarea: " + data['asignaturas'][i]["tareas"] + ", Fecha: " + data['asignaturas'][i]["fecha_tareas"];
-        }
-        a_devolver += data['asignaturas'][i]["nombreAsignatura"]  + "-> " +  tareas  + "\n";
-      }
-    }
-
-  }
-  return a_devolver;
-}
 
 //HANDLER
 exports.handler = async function(event, context) {
@@ -59,16 +24,16 @@ exports.handler = async function(event, context) {
         let a_devolver = '';
         switch (text) {
             case "/ktengo":
-              a_devolver = getAsignaturas();
+              a_devolver = lib.getAsignaturas();
               break;
             case "/ktengoIV":
-              a_devolver = getAsignaturas("IV");
+              a_devolver = lib.getAsignaturas("IV");
               break;
             case "/ktengoDAI":
-              a_devolver = getAsignaturas("DAI");
+              a_devolver = lib.getAsignaturas("DAI");
               break;
             case "/ktengoSPSI":
-              a_devolver = getAsignaturas("SPSI");
+              a_devolver = lib.getAsignaturas("SPSI");
               break;
             default:
               a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y para consultas más concretas: \n/ktengoIV para obtener las tareas a realizar de IV. \n/ktengoDAI para obtener las tareas a realizar de DAI. \n/ktengoSPSI para obtener las tareas a realizar de SPSI."

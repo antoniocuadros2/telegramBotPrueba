@@ -61,11 +61,11 @@ exports.handler = async function(event, context) {
             case "/ktengo":
                 a_devolver = getAsignaturas();
                 break;
-            case "/ktengourgente":
-                a_devolver = "Que tareas tengo que hacer urgentemente";
+            case "/ktengoIV":
+                a_devolver = getAsignaturas("IV");
                 break;
             default:
-                a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y  /ktengourgente para obtener una lista ordenada por urgencia de tareas a realizar"
+                a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y para consultas más concretas: \n/ktengoIV para obtener las tareas a realizar de IV \n/ktengoDAI para obtener las tareas a realizar de DAI, \n/ktengoSPSI para obtener las tareas a realizar de SPSI"
                 break;
         }       
         await enviaMensaje(chat.id, a_devolver);

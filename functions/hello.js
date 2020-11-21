@@ -1,4 +1,5 @@
 const request = require('request-promise');
+const data = require('./data.json');
 
 async function enviaMensaje(chat_id, text) {
   const options = {
@@ -13,6 +14,14 @@ async function enviaMensaje(chat_id, text) {
   return request(options);
 }
 
+function getAsignaturas(){
+  num_asignaturas = 3;
+  a_devolver = "";
+  for(i = 1; i <= num_asignaturas; i++){
+    a_devolver += data['asignaturas'][i]["nombreAsignatura"] + "-> " +  data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"] + "\n";
+  }
+  return a_devolver;
+}
 
 //HANDLER
 exports.handler = async function(event, context) {
@@ -23,7 +32,7 @@ exports.handler = async function(event, context) {
         let a_devolver = '';
         switch (text) {
             case "/ktengo":
-                a_devolver = "Que tareas tengo que hacer";
+                a_devolver = getAsignaturas();
                 break;
             case "/ktengourgente":
                 a_devolver = "Que tareas tengo que hacer urgentemente";

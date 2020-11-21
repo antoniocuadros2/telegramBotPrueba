@@ -59,14 +59,20 @@ exports.handler = async function(event, context) {
         let a_devolver = '';
         switch (text) {
             case "/ktengo":
-                a_devolver = getAsignaturas();
-                break;
+              a_devolver = getAsignaturas();
+              break;
             case "/ktengoIV":
-                a_devolver = getAsignaturas("IV");
-                break;
+              a_devolver = getAsignaturas("IV");
+              break;
+            case "/ktengoDAI":
+              a_devolver = getAsignaturas("DAI");
+              break;
+            case "/ktengoSPSI":
+              a_devolver = getAsignaturas("SPSI");
+              break;
             default:
-                a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y para consultas más concretas: \n/ktengoIV para obtener las tareas a realizar de IV \n/ktengoDAI para obtener las tareas a realizar de DAI, \n/ktengoSPSI para obtener las tareas a realizar de SPSI"
-                break;
+              a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y para consultas más concretas: \n/ktengoIV para obtener las tareas a realizar de IV \n/ktengoDAI para obtener las tareas a realizar de DAI, \n/ktengoSPSI para obtener las tareas a realizar de SPSI"
+              break;
         }       
         await enviaMensaje(chat.id, a_devolver);
     }

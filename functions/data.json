@@ -1,0 +1,34 @@
+    
+{
+    "asignaturas":{
+        "1":{
+            "nombreAsignatura":"Infraestructura virtual",
+            "modalidad":"teoría, prácticas, prácticas",
+            "enlace":"https://meet.jit.si/IV-ETSIIT-UGR-2020",
+            "dia":["Martes", "Martes, Viernes"],
+            "horas":["11:30-12:30", "9:30-11:30", "9:30-11:30"],
+            "tareas": ["Entrega-hito-5"],
+            "fecha_tareas":["24/11"]
+        },
+        
+        "2":{
+            "nombreAsignatura":"Desarrollo de Aplicaciones para internet",
+            "modalidad":["teoría", "prácticas", "prácticas"],
+            "enlace":["https://meet.google.com/fah-hfak-npa","https://meet.google.com/ohk-meko-qym", "https://meet.google.com/gfv-wgxk-gfe", "https://meet.google.com/rtu-wxcv-paq"],
+            "dia":["Viernes", "Martes", "Miércoles", "Viernes"],
+            "horas":["11:30-13:30", "9:30-11:30", "9:30-11:30", "9:30-11:30"],
+            "tareas": ["Entrega-práctica-4"],
+            "fecha_tareas":["29/11"]
+        },
+ 
+        "3":{
+            "nombreAsignatura":"Seguridad y Protección de sistemas informáticos",
+            "modalidad":["teoría", "prácticas", "prácticas"],
+            "enlace":["https://meet.google.com/tvm-umgh-tfm?pli=1&authuser=3"],
+            "dia":["Miércoles", "Miércoles", ["Viernes"]],
+            "horas":["11:30-13:30", "9:30-11:30", "9:30-11:30"],
+            "tareas": ["Defensa-P3", "Entrega-tareas", "Presentación-trabajo-final"],
+            "fecha_tareas":["27/11", "30/11", "4/11"]
+        }
+    }
+}

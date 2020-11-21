@@ -71,7 +71,7 @@ exports.handler = async function(event, context) {
               a_devolver = getAsignaturas("SPSI");
               break;
             default:
-              a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y para consultas más concretas: \n/ktengoIV para obtener las tareas a realizar de IV \n/ktengoDAI para obtener las tareas a realizar de DAI, \n/ktengoSPSI para obtener las tareas a realizar de SPSI"
+              a_devolver = "Usa /ktengo para saber que tareas tienes que realizar y para consultas más concretas: \n/ktengoIV para obtener las tareas a realizar de IV. \n/ktengoDAI para obtener las tareas a realizar de DAI. \n/ktengoSPSI para obtener las tareas a realizar de SPSI."
               break;
         }       
         await enviaMensaje(chat.id, a_devolver);

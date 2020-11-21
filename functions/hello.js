@@ -23,13 +23,13 @@ function getAsignaturas(){
     fechas = ""
     if (data['asignaturas'][i]["tareas"].length > 1){
       for( j = 0; j < data['asignaturas'][i]["tareas"].length; j++){
-        tareas += "   \n           Tarea: " +  data['asignaturas'][i]["tareas"][j] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
+        tareas += "   \n     Tarea: " +  data['asignaturas'][i]["tareas"][j] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"][j] + " ";
       }
     }
     else{
       tareas += "Tarea: " + data['asignaturas'][i]["tareas"] + " Fecha: " + data['asignaturas'][i]["fecha_tareas"];
     }
-    a_devolver += "<bold>" + data['asignaturas'][i]["nombreAsignatura"]  + "<bold>" + "-> " +  tareas  + "\n";
+    a_devolver += "**" + data['asignaturas'][i]["nombreAsignatura"]  + "**" + "-> " +  tareas  + "\n";
   }
   return a_devolver;
 }
